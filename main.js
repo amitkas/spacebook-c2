@@ -82,30 +82,14 @@ var clickedCommentText = $(currentcomment).prev('.comment-text').text(); //find 
     var post = _findPostById(id);
     var commentIndex = $clickedComment.index();
 
-    // posts[id].comments.splice(, 1);
-
+    	for (var j = 0; j < post.comments.length; j++) {
+    		if (post.comments[j].text == clickedCommentText) {
+    			post.comments.splice(j,1)
+    		}
+    	}
     renderPosts();
     renderComments();
-      //   for (var i = 0; i < posts[id].comments.length; i++) {
-      //   	if (post.comments[i].text == clickedCommentText) {
-      //   		console.log(post)
-      //   		// console.log(post.comments[i].text)
-      //   		// console.log(clickedCommentText)
-      //   		// console.log(post.comments)
-      //   		// console.log(clickedCommentText)
-      //  			post.comments.splice(post.comments.indexOf(clickedCommentText), 1);
-      //  			 // console.log(post.comments.indexOf(clickedCommentText))
-      //  			// console.log(post)
-      // //   		console.log(post.comments[i])
-      //   	}
-      //   	// console.log(post.comments)
-      //   }
-
-    // post.comment.splice(posts.indexOf(clickedCommentText), 1);
-    // // $clickedComment.remove();
-    // console.log(post)
-} 
-// // test end here
+    }
 
 
 
@@ -114,8 +98,6 @@ var clickedCommentText = $(currentcomment).prev('.comment-text').text(); //find 
     $posts.empty();
     for (var i = 0; i < posts.length; i += 1) {
       var post = posts[i];
-
-     // var makecomment = renderComments(post)
 
       var commentsContainer = '<div class="comments-container">' +
       '<input type="text" class="comment-name">' +
