@@ -54,13 +54,6 @@ var SpacebookApp = function () {
     post.comments.push(commentInput);
     renderPosts()
 
-
-    // console.log(clickedComment);
-    // var lastCommentIndex = posts[currentPost.data().id].comments.length - 1; 
-    // var idCounter = lastCommentIndex + 1;
-    // console.log('i just added a comment')
-    // console.log(posts)
-    
 	}
 
 
